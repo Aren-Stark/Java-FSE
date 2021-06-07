@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<!-- Write appropriate and complete  HTML  CODE with proper syntax HERE. Also write approriate code to link billcalc.css file from this file.-->
+<head>
+            <link rel="stylesheet" href="billcalc.css" type="text/css" media="all" />
+            <script type="text/javascript" charset="utf-8">
+                function calculateTotalPrice()
+                {
+                    var price = document.getElementById("price").value;
+                    var qty = document.getElementById("qty").value;
+                    var totalprice = price*qty;
+                    document.getElementsByTagName("output")[0].innerHTML = totalprice; 
+                    return false;
+                }
+            </script>
+        </head>
+        <body>
+            <form onsubmit="return calculateTotalPrice();">
+                <h1>Bill Calculator</h1>
+                <table>
+                    <tr>
+                        <td><label for="productName">Product Name</label></td>
+                        <td><input type="text" name="productName" id="productName" placeholder="Product Name" required/></td>
+                    </tr>
+                    <tr>
+                         <td><label for="price">Product Price in Rs.</label></td>
+                         <td><input type="number" name="price" id="price" placeholder="Product Price" required/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="qty">Quantity</label></td>
+                        <td><input type="number" name="qty" id="qty" placeholder="Enter quantity" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="totalprice">Total Price in Rs.</label></td>
+                        <td><output for="price qty" id="totalprice" name="totalprice" required></output></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" name="submit" id="submit" value="Submit" /></td>
+                    </tr>
+                </table>
+            </form>
+        </body>    
+</html>
